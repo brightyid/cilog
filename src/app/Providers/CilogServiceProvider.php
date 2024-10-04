@@ -2,6 +2,7 @@
 
 namespace Cilog\Providers;
 
+use Cilog\Console\InstallCilog;
 use Illuminate\Support\ServiceProvider;
 
 class CilogServiceProvider extends ServiceProvider {
@@ -18,4 +19,18 @@ class CilogServiceProvider extends ServiceProvider {
         ], 'config');
     }
 
+    protected function registerCommands(): void
+    {
+        $this->commands([
+            InstallCilog::class,
+        ]);
+
+        if (! $this->app->runningInConsole()) {
+            return;
+        }
+
+        $this->commands([
+            InstallCilog::class,
+        ]);
+    }
 }
