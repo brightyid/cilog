@@ -1,0 +1,25 @@
+{
+    "name": "brighty/cilog",
+    "description": "A simple log library for Internal use.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Brighty\\Cilog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Egi Aprilianto",
+            "email": "contact@asln.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
