@@ -11,6 +11,12 @@ class CilogServiceProvider extends ServiceProvider {
         $this->app->bind('cilog', function() {
             return new Cilog();
         });
+        
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/cilog.php', 'cilog'
+        );
+
+        $this->registerCommands();
     }
 
     public function boot() {
