@@ -1,5 +1,7 @@
 <?php
 
+namespace Cilog;
+
 use Illuminate\Support\Facades\Http;
 
 class Cilog
