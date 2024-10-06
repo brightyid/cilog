@@ -15,7 +15,7 @@ Install Cilog with composer
 ## Usage/Examples
 
 ```php
-use Cilog\Cilog;
+use Brighty\Cilog\Cilog;
 
 
 Cilog::log("Succesfully added data!", [$request->all()])
