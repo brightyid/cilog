@@ -26,7 +26,8 @@ class Cilog
 
         $data = [
             'message' => $message,
-            'data' => $data
+            'data' => $data,
+            'app' => config('app.name'),
         ];
 
         $response = Http::post($this->endpoint, $data);
