@@ -27,6 +27,7 @@ class InstallCilog extends Command
 
         $this->call('vendor:publish', [
             '--provider' => "Cilog\Providers\CilogServiceProvider",
+            '--tag' => "config"
         ]);
 
         $this->info('Installed Cilog.');

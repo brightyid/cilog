@@ -27,10 +27,6 @@ class CilogServiceProvider extends ServiceProvider {
 
     protected function registerCommands(): void
     {
-        $this->commands([
-            InstallCilog::class,
-        ]);
-
         if (! $this->app->runningInConsole()) {
             return;
         }
