@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "\\Cilog\\Providers\\CilogServiceProvider"
+                "Cilog\\Providers\\CilogServiceProvider"
             ]
         }
     }
