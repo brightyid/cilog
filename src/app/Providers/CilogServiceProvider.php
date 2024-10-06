@@ -13,7 +13,7 @@ class CilogServiceProvider extends ServiceProvider {
         });
         
         $this->mergeConfigFrom(
-            __DIR__.'/../config/cilog.php', 'cilog'
+            __DIR__.'/../../config/cilog.php', 'cilog'
         );
 
         $this->registerCommands();
@@ -21,7 +21,7 @@ class CilogServiceProvider extends ServiceProvider {
 
     public function boot() {
         $this->publishes([
-            __DIR__.'/../config/cilog.php' => config_path('cilog.php'),
+            __DIR__.'/../../config/cilog.php' => config_path('cilog.php'),
         ], 'config');
     }
 
