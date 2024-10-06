@@ -2,7 +2,7 @@
 
 namespace Brighty\Cilog\Providers;
 
-use Cilog\Console\InstallCilog;
+use Brighty\Cilog\Console\InstallCilog;
 use Illuminate\Support\ServiceProvider;
 
 class CilogServiceProvider extends ServiceProvider {
