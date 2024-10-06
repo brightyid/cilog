@@ -1,6 +1,6 @@
 <?php
 
-namespace Cilog\Providers;
+namespace Brighty\Cilog\Providers;
 
 use Cilog\Console\InstallCilog;
 use Illuminate\Support\ServiceProvider;

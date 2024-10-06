@@ -1,6 +1,6 @@
 <?php
 
-namespace Cilog\Console;
+namespace Brighty\Cilog\Console;
 
 use Illuminate\Console\Command;
 

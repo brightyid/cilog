@@ -1,6 +1,6 @@
 <?php
 
-namespace Cilog;
+namespace Brighty\Cilog;
 
 use Illuminate\Support\Facades\Http;
 
