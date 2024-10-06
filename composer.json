@@ -5,8 +5,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Brighty\\Cilog\\": "src/"
+            "Brighty\\Cilog\\": "src/",
+            "Brighty\\Cilog\\App\\Providers\\": "src/app/Providers/",
+            "Brighty\\Cilog\\App\\Console\\": "src/app/Console/"
         }
     },
     "authors": [
@@ -26,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Brighty\\Cilog\\CilogServiceProvider"
+                "Brighty\\Cilog\\Providers\\CilogServiceProvider"
             ]
         }
     }
