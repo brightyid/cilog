@@ -6,8 +6,8 @@
     "autoload": {
         "psr-4": {
             "Brighty\\Cilog\\": "src/",
-            "Brighty\\Cilog\\App\\Providers\\": "src/app/Providers/",
-            "Brighty\\Cilog\\App\\Console\\": "src/app/Console/"
+            "Brighty\\Cilog\\Providers\\": "src/app/Providers/",
+            "Brighty\\Cilog\\Console\\": "src/app/Console/"
         }
     },
     "authors": [
