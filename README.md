@@ -45,7 +45,7 @@ $app->register(Brighty\Cilog\Providers\LumenCilogServiceProvider::class);
 **Installation**
 ```bash
 # Install Cilog
-php artisan cilog:install
+php artisan cilog:install --lumen
 ```
 
 **Usage/Examples**
