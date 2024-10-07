@@ -22,7 +22,7 @@ class Cilog
 
     private function sendLog(string $message, array $data = [])
     {
-        $this->endpoint = $this->endpointInstance();
+        $this->endpoint = rtrim($this->endpointInstance(), '/');
 
         $data = [
             'message' => $message,
@@ -30,7 +30,7 @@ class Cilog
             'app' => config('app.name'),
         ];
 
-        $response = Http::post($this->endpoint, $data);
+        $response = Http::post($this->endpoint . '/store', $data);
 
         if ($response->failed()) {
             throw new Exception('Failed to send log to Cilog.');
