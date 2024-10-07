@@ -26,10 +26,11 @@ class InstallCilog extends Command
         $this->info('Publishing Cilog configuration...');
         
         if ($this->option('lumen')) {
-            // copy config file to lumen config directory without publishing
-            $configFile = __DIR__.'/../../config/cilog.php';
-            $configPath = app()->basePath('config/cilog.php');
-            copy($configFile, $configPath);
+            $configFile = app()->basePath('config/cilog.php');
+            if (!file_exists($configFile)) {
+                $file = "<?php\n\nreturn [\n    'endpoint' => env('CILOG_ENDPOINT'),\n];\n";
+                file_put_contents($configFile, $file);
+            }
         } else {
             $this->call('vendor:publish', [
                 '--provider' => 'Brighty\Cilog\Providers\CilogServiceProvider',
