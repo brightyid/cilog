@@ -28,6 +28,10 @@ class InstallCilog extends Command
         if ($this->option('lumen')) {
             $configFile = app()->basePath('config/cilog.php');
             if (!file_exists($configFile)) {
+                if (!is_dir(app()->basePath('config'))) {
+                    mkdir(app()->basePath('config'));
+                }
+                
                 $file = "<?php\n\nreturn [\n    'endpoint' => env('CILOG_ENDPOINT'),\n];\n";
                 file_put_contents($configFile, $file);
             }
