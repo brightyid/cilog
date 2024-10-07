@@ -5,7 +5,7 @@ namespace Brighty\Cilog\Providers;
 use Brighty\Cilog\Console\InstallCilog;
 use Illuminate\Support\ServiceProvider;
 
-class CilogLumenServiceProvider extends ServiceProvider {
+class LumenCilogServiceProvider extends ServiceProvider {
 
     public function register() {
         $this->app->bind('cilog', function() {
