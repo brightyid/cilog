@@ -37,9 +37,10 @@ class InstallCilog extends Command
 
     private function setEnvValue($key, $value)
     {
-        $envFile = app()->environmentFilePath();
         if ($this->option('lumen')) {
             $envFile = app()->basePath('.env');
+        } else {
+            $envFile = app()->environmentFilePath();
         }
         
         $str = file_get_contents($envFile);
