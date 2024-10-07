@@ -21,7 +21,7 @@ class CilogServiceProvider extends ServiceProvider {
 
     public function boot() {
         $this->publishes([
-            __DIR__.'/../../config/cilog.php' => config_path('cilog.php'),
+            __DIR__.'/../../config/cilog.php' => base_path('config/cilog.php'),
         ], 'config');
     }
 

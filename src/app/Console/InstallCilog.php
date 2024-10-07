@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class InstallCilog extends Command
 {
-    protected $signature = 'cilog:install';
+    protected $signature = 'cilog:install {--lumen : Install for Lumen}';
 
     protected $description = 'Install the Cilog Library';
 
@@ -24,18 +24,24 @@ class InstallCilog extends Command
         $this->setEnvValue('CILOG_ENDPOINT', $endpoint);
 
         $this->info('Publishing Cilog configuration...');
-
-        $this->call('vendor:publish', [
-            '--provider' => "Brighty\Cilog\Providers\CilogServiceProvider",
-            '--tag' => "config"
-        ]);
-
+        
+        if (!$this->option('lumen')) {
+            $this->call('vendor:publish', [
+                '--provider' => 'Brighty\Cilog\Providers\CilogServiceProvider',
+                '--tag' => 'config',
+            ]);
+        }
+        
         $this->info('Installed Cilog.');
     }
 
     private function setEnvValue($key, $value)
     {
         $envFile = app()->environmentFilePath();
+        if ($this->option('lumen')) {
+            $envFile = app()->basePath('.env');
+        }
+        
         $str = file_get_contents($envFile);
 
         $oldValue = env($key);
