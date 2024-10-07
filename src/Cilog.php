@@ -26,7 +26,7 @@ class Cilog
 
         $data = [
             'message' => $message,
-            'data' => $data,
+            'context' => $data,
             'app' => config('app.name'),
         ];
 
