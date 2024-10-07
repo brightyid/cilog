@@ -4,15 +4,51 @@
 A simple log library for Internal use.
 
 ## Installation
+### Laravel
 
-Install Cilog with composer
+**Download Cilog with composer**
 
 ```bash
-  composer require brighty/cilog
-  php artisan cilog:install
+composer require brighty/cilog
 ```
 
-## Usage/Examples
+**Installation**
+```bash
+# Install Cilog
+php artisan cilog:install
+```
+
+**Usage/Examples**
+
+```php
+use Brighty\Cilog\Cilog;
+
+
+Cilog::log("Succesfully added data!", [$request->all()])
+```
+
+### Lumen
+**Download Cilog with composer**
+
+```bash
+composer require brighty/cilog
+```
+
+**Modify the bootstrap flow**
+```php
+/** @file bootstrap/app.php */
+
+// Register service provider
+$app->register(Brighty\Cilog\Providers\LumenCilogServiceProvider::class);
+```
+
+**Installation**
+```bash
+# Install Cilog
+php artisan cilog:install
+```
+
+**Usage/Examples**
 
 ```php
 use Brighty\Cilog\Cilog;
