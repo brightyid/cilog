@@ -17,7 +17,7 @@ class Cilog
     public static function log(string $message, array $data = [])
     {
         $cilog = new Cilog();
-        return $cilog->sendLog($message, $data);
+        return $cilog->sendLog($message, collect($data)->toArray());
     }
 
     private function sendLog(string $message, array $data = [])
