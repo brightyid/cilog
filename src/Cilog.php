@@ -14,9 +14,14 @@ class Cilog
         $this->endpoint = config('cilog.endpoint');
     }
 
-    public static function log(string $message, array $data = [])
+    public static function log(string $message, any $data = [])
     {
         $cilog = new Cilog();
+
+        if (!is_array($data)) {
+            $data = [$data];
+        }
+
         return $cilog->sendLog($message, collect($data)->toArray());
     }
 
