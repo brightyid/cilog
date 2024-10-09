@@ -14,7 +14,7 @@ class Cilog
         $this->endpoint = config('cilog.endpoint');
     }
 
-    public static function log(string $message, any $data = [])
+    public static function log(string $message, $data)
     {
         $cilog = new Cilog();
 
