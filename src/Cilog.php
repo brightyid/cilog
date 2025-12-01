@@ -38,7 +38,7 @@ class Cilog
         $response = Http::post($this->endpoint . '/store', $data);
 
         if ($response->failed()) {
-            throw new Exception('Failed to send log to Cilog.');
+            throw new \Exception('Failed to send log to Cilog.');
         }
 
         return $response->json();
@@ -47,7 +47,7 @@ class Cilog
     private function endpointInstance()
     {
         if (!$this->endpoint) {
-            throw new Exception('Cilog endpoint is not set.');
+            throw new \Exception('Cilog endpoint is not set.');
         }
 
         return $this->endpoint;
